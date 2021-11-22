@@ -1,22 +1,10 @@
-# Efficient and Compact Convolutional Neural Network Architectures for Non-temporal Real-time Fire Detection
+# Real-time Fire Detection
+---
+##KHUTHON 대회 준비
 
-Tested using Python >= 3.6.x, [PyTorch >= 1.5](https://pytorch.org/), and [OpenCV 3.x / 4.x](http://www.opencv.org) (requires opencv extra modules - ximgproc module for superpixel segmentation).
-
-![Architectures](images/icmla_fire2020_ex.png)
-
-## Architectures:
-![Architectures](images/icmla_fire2020_arch.png)
-
-## Abstract:
-
-_" Automatic visual fire detection is used to complement traditional fire detection sensor systems (smoke/heat). In this work, we investigate different Convolutional Neural Network (CNN) architectures and their variants for the nontemporal real-time bounds detection of fire pixel regions in video (or still) imagery. Two reduced complexity compact CNN architectures (NasNet-A-OnFire and ShuffleNetV2-OnFire) are proposed through experimental analysis to optimise the computational efficiency for this task. The results improve upon the current state-of-the-art solution for fire detection, achieving an accuracy of 95% for full-frame binary classification and 97% for superpixel localisation. We notably achieve a classification speed up by a factor of 2.3× for binary classification and 1.3× for superpixel localisation, with runtime of 40 fps and 18 fps respectively, outperforming prior work in the field presenting an efficient, robust and real-time solution for fire region detection. Subsequent implementation on low-powered devices (Nvidia Xavier-NX, achieving 49 fps for full-frame classification via ShuffleNetV2-OnFire) demonstrates our architectures are suitable for various real-world deployment applications."_
-
-[[Thomson, Bhowmik, Breckon, In Proc. International Conference on Machine Learning Applications, IEEE, 2020](https://breckon.org/toby/publications/papers/thompson20fire.pdf)]
-
-[[Talk](https://www.youtube.com/embed/1haTCOHgDtQ)] [[Example](https://www.youtube.com/embed/t6r2TndNSVY)]
-
-Our previous works on fire detection using **Alexnet** and **InceptionVx** can be found [here](https://github.com/tobybreckon/fire-detection-cnn).
-
+기존 FIRE_CLASSIFICATION에서, OPENCV를 이용해 색을 통해 detection이 가능하도록 함.
+FIRE 주변에 bounding box를 통해서, FIRE-DETECTION이 가능해짐.
+계산량을 줄이기 위하여, 색감지를 통한 DETECTION을 함. 
 
 ---
 ## Installation
@@ -141,20 +129,7 @@ We support inference for image/image directory, video/video directory, and webca
     ~~~
 
 ---
-## Fire Detection Datasets:
-
-The custom dataset used for training and evaluation can be found on [Durham Collections - Thomson/Bhowmik/Breckon, 2020](https://collections.durham.ac.uk/collections/r1ww72bb497). A direct download link for the dataset is [here](https://collections.durham.ac.uk/downloads/r2d217qp536).
-
-* DOI for datsets - [http://doi.org/10.15128/r2d217qp536](http://doi.org/10.15128/r2d217qp536).
-
-A download script ```download-dataset.sh``` is also provided which will create an additional ```dataset``` directory containing the training dataset (10.5Gb in size, works on Linux/MacOS).
-
----
-
 ## References:
-
-If you are making use of this work in any way (including our pre-trained models or datasets), _you must please_ reference the following articles in any report, publication, presentation, software release
-or any other associated materials:
 
 [Efficient and Compact Convolutional Neural Network Architectures for Non-temporal Real-time Fire Detection](https://breckon.org/toby/publications/papers/thompson20fire.pdf)
 (Thomson, Bhowmik, Breckon), In Proc. International Conference on Machine Learning Applications, IEEE, 2020.
@@ -172,8 +147,4 @@ or any other associated materials:
   doi = {10.1109/ICMLA51294.2020.00030},
   arxiv = {http://arxiv.org/abs/2010.08833},
 }
-```
 
-In addition the (very permissive) terms of the [LICENSE](LICENSE) must be adhered to.
-
----
